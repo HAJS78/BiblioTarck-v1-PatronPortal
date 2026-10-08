@@ -40,7 +40,7 @@ Backend/biblio_track_patron_portal/appsettings.Production.json
 *.secrets.json
 
 # ==========================================
-# Flutter / Dart (Frontend - spend_wise)
+# Flutter / Dart (Frontend - biblio_track_patron_portal)
 # ==========================================
 biblio_track_patron_portal/.dart_tool/
 biblio_track_patron_portal/.flutter-plugins
