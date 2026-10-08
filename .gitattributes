@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Ignore native platform runners from GitHub language statistics
+biblio_track_patron_portal/android/* linguist-vendored
+biblio_track_patron_portal/ios/* linguist-vendored

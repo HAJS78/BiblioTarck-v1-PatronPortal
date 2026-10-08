@@ -35,8 +35,8 @@ build/
 project.lock.json
 project.assets.json
 
-Backend/SpendWise/appsettings.Development.json
-Backend/SpendWise/appsettings.Production.json
+Backend/biblio_track_patron_portal/appsettings.Development.json
+Backend/biblio_track_patron_portal/appsettings.Production.json
 *.secrets.json
 
 # ==========================================
