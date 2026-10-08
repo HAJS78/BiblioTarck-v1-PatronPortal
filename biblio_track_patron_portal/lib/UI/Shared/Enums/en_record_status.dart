@@ -1,0 +1,9 @@
+enum EnRecordStatus
+{
+
+added,
+discarded;
+
+
+} 
+  

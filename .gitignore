@@ -1,0 +1,96 @@
+# ==========================================
+# Root & System Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.bak
+*.tmp
+*.log
+
+# ==========================================
+# .NET / C# / Visual Studio (Backend)
+# ==========================================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+build/
+
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userlibraries
+
+*.nupkg
+*.snupkg
+**/packages/
+project.lock.json
+project.assets.json
+
+Backend/SpendWise/appsettings.Development.json
+Backend/SpendWise/appsettings.Production.json
+*.secrets.json
+
+# ==========================================
+# Flutter / Dart (Frontend - spend_wise)
+# ==========================================
+spend_wise/.dart_tool/
+spend_wise/.flutter-plugins
+spend_wise/.flutter-plugins-dependencies
+spend_wise/.pub-cache/
+spend_wise/.pub/
+spend_wise/build/
+
+*.symbols
+*.dylib
+*.dll
+*.so
+*.exe
+
+# Android specific
+spend_wise/android/.gradle/
+spend_wise/android/captures/
+spend_wise/android/gradlew
+spend_wise/android/gradlew.bat
+spend_wise/android/local.properties
+spend_wise/android/key.properties
+spend_wise/android/app/debug/
+spend_wise/android/app/profile/
+spend_wise/android/app/release/
+*.apk
+*.aab
+
+# iOS specific
+spend_wise/ios/Flutter/Generated.xcconfig
+spend_wise/ios/Flutter/flutter_export_environment.sh
+spend_wise/ios/Runner.xcodeproj/project.xcworkspace/
+spend_wise/ios/Runner.xcodeproj/xcuserdata/
+spend_wise/ios/Pods/
+spend_wise/ios/.symlinks/
+spend_wise/ios/Profile.xcconfig
+spend_wise/ios/Release.xcconfig
+
+# Web specific
+spend_wise/web/canvas_kit/
+
+# ==========================================
+# IDEs & Code Editors
+# ==========================================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/

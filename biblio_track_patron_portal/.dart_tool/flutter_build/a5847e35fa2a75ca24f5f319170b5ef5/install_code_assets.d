@@ -1,0 +1,1 @@
+ D:\\Users\\USER\\source\\repos\\FrontEndProjects\\biblio_track_patron_portal\\.dart_tool\\flutter_build\\a5847e35fa2a75ca24f5f319170b5ef5\\native_assets.json: 

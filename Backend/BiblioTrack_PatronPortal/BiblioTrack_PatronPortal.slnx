@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BiblioTrack_PatronPortal/BiblioTrack_PatronPortal.csproj" />
+  <Project Path="PatronPortal_BusinessLogicLayer/PatronPortal_BusinessLogicLayer.csproj" />
+  <Project Path="PatronPortal_DataAccessLayer/PatronPortal_DataAccessLayer.csproj" />
+</Solution>
