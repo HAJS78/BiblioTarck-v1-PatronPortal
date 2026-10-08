@@ -42,12 +42,12 @@ Backend/SpendWise/appsettings.Production.json
 # ==========================================
 # Flutter / Dart (Frontend - spend_wise)
 # ==========================================
-spend_wise/.dart_tool/
-spend_wise/.flutter-plugins
-spend_wise/.flutter-plugins-dependencies
-spend_wise/.pub-cache/
-spend_wise/.pub/
-spend_wise/build/
+biblio_track_patron_portal/.dart_tool/
+biblio_track_patron_portal/.flutter-plugins
+biblio_track_patron_portal/.flutter-plugins-dependencies
+biblio_track_patron_portal/.pub-cache/
+biblio_track_patron_portal/.pub/
+biblio_track_patron_portal/build/
 
 *.symbols
 *.dylib
@@ -56,30 +56,30 @@ spend_wise/build/
 *.exe
 
 # Android specific
-spend_wise/android/.gradle/
-spend_wise/android/captures/
-spend_wise/android/gradlew
-spend_wise/android/gradlew.bat
-spend_wise/android/local.properties
-spend_wise/android/key.properties
-spend_wise/android/app/debug/
-spend_wise/android/app/profile/
-spend_wise/android/app/release/
+biblio_track_patron_portal/android/.gradle/
+biblio_track_patron_portal/android/captures/
+biblio_track_patron_portal/android/gradlew
+biblio_track_patron_portal/android/gradlew.bat
+biblio_track_patron_portal/android/local.properties
+biblio_track_patron_portal/android/key.properties
+biblio_track_patron_portal/android/app/debug/
+biblio_track_patron_portal/android/app/profile/
+biblio_track_patron_portal/android/app/release/
 *.apk
 *.aab
 
 # iOS specific
-spend_wise/ios/Flutter/Generated.xcconfig
-spend_wise/ios/Flutter/flutter_export_environment.sh
-spend_wise/ios/Runner.xcodeproj/project.xcworkspace/
-spend_wise/ios/Runner.xcodeproj/xcuserdata/
-spend_wise/ios/Pods/
-spend_wise/ios/.symlinks/
-spend_wise/ios/Profile.xcconfig
-spend_wise/ios/Release.xcconfig
+biblio_track_patron_portal/ios/Flutter/Generated.xcconfig
+biblio_track_patron_portal/ios/Flutter/flutter_export_environment.sh
+biblio_track_patron_portal/ios/Runner.xcodeproj/project.xcworkspace/
+biblio_track_patron_portal/ios/Runner.xcodeproj/xcuserdata/
+biblio_track_patron_portal/ios/Pods/
+biblio_track_patron_portal/ios/.symlinks/
+biblio_track_patron_portal/ios/Profile.xcconfig
+biblio_track_patron_portal/ios/Release.xcconfig
 
 # Web specific
-spend_wise/web/canvas_kit/
+biblio_track_patron_portal/web/canvas_kit/
 
 # ==========================================
 # IDEs & Code Editors

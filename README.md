@@ -1,25 +1,27 @@
-# SpendWise 💸
+# 📖 BiblioTrackPatronPortal
 
-> A full-stack group expense tracking and debt settlement mobile application built with **Flutter** (MVVM + Provider) and **.NET 8 RESTful API** (3-Tier Architecture with ADO.NET & MS SQL Server).
-
-
+> A full-stack library patron portal  mobile application built with **Flutter** (MVVM + Provider) and **.NET 8 RESTful API** (3-Tier Architecture with Enitity framework & MS SQL Server).
 
 
 
-## 📖 Overview
-**SpendWise** is a multi-tier group expense-sharing mobile solution designed to simplify shared finances and answer *"Who owes whom?"*. Users can register, create or join groups, log shared expenses, split costs equally or with custom amounts, track net balances in real time, and settle debts directly within the app.
+
+
+## 📝 Overview
+
+
+**BiblioTrackPatronPortal** is a multi-tier library patron portal mobile solution designed to 
+facilitate library member to create an online account where they can manage their favorites,recieve and manage overdue items and reservation notifications,pay fines, search library OPAC. 
 
 
 ## ✨ Key Features
-- **User Authentication & Roles:** Secure signup/login supporting **Admin** and **Member** roles linked to specific **Group IDs**.
-- **Password Recovery:** Search user email validation & reset mechanism.
-- **Interactive Dashboard:** Real-time net balance visual tracking ("You Owe" / "You Are Owed") and recent transaction activity feed.
-- **Flexible Expense Logging:**
-  - Categorize expenses (Groceries, Internet, Shopping, Electricity, etc.).
-  - Select participating group members and specify who paid.
-  - Split expenses **Equally** or with **Custom** split allocations.
-- **Detailed Activity Breakdown:** Inspect itemized expense details showing individual amounts paid and share settlement status (`Share Paid: Yes / No`).
-- **Debt Settlement:** Comprehensive overview of lenders and lent amounts with direct debt settlement workflows.
+- **User Authentication:** login
+- **Signup:** validation by patron library card number before creating an online account
+- **Password Recovery:** validation by patron Email & reset mechanism.
+- **Interactive Dashboard:**
+    Shows some recommendations based on the patron favorites.
+    Quick search by Title or Authors 
+- **Favorites Management:** add/remove books to patron facorites.
+- **Fines/Payment Management:** List unapid fines and the ability to pay those fines using Stripe SDK 
 
 
 ## 🛠 Architecture
@@ -35,11 +37,11 @@ Framework: ASP.NET Core RESTful API (.NET 8)
 
 Architecture: Classic 3-Tier Architecture
 
-API Layer (SpendWise): REST Controllers (SpendWise.http, Program.cs).
+API Layer (BiblioTrack_PatronPortal): REST Controllers.
 
-Business Logic Layer (SpendWiseBLL): Core domain models (User, Group, Lending, ExpenseLog, UserExpense), services (ExpenseService, UserGroupService), and entity mappers.
+Business Logic Layer (PatronPortal_BusinessLogicLayer): Core domain models 
 
-Data Access Layer (SpendWiseDAL): Direct database operations built with ADO.NET (clsSettings.cs, UserGroupDAL.cs, data contracts).
+Data Access Layer (PatronPortal_DataAccessLayer): database operations built with entity framework 
 
 Database Engine: Microsoft SQL Server .
 
@@ -51,13 +53,13 @@ Database Engine: Microsoft SQL Server .
 
 .NET SDK: 8.0
 
-Database: Microsoft SQL Server (LocalDB, SQL Express, or Full Instance)
+Database: Microsoft SQL Server (SQL Express, or Full Instance)
 
 IDE: Visual Studio (Backend) & Visual Studio Code (Frontend)
 
 🚀 How to Run:
 
-Clone the repository:git@github.com:HAJS78/SpendWise-v1-.git
+Clone the repository:git@github.com:HAJS78/BiblioTarck-v1-PatronPortal.git
 
 1. Database Setup
 Open SQL Server Management Studio (SSMS).
@@ -68,31 +70,49 @@ Open and run the .sql script inside the DatabaseScript/ folder to generate table
 
 2. Backend API Setup (.NET 8)
 
-Open Backend/SpendWise/SpendWise.sln in Visual Studio 
+Open Backend/BiblioTarck_PatronPortal/BiblioTrack_PatronPortal.sln in Visual Studio 
 
-Update the connection string in Backend/SpendWiseDAL/clsSettings.cs
+Update the connection string in Backend/BiblioTrack_PatronPortal/BiblioTrack_PatronPortal
+/appsettings.json 
 
-static class clsSettings
-{
+"ConnectionStrings": {
 
-    static public string ConnectionString = "Server=YOUR_SERVER_NAME;Database=SpendWiseV1;User Id=YOUR_ID;Password=YOUR_Password;Encrypt=True;TrustServerCertificate=True;";
+    "BiblioTrackv1": "Server= Your local host;Database=Your Database Name;Trusted_Connection=True;TrustServerCertificate=True;"
 
-}
+  },
 
-Build the project.
+The backend also integarte with another C# RESTful API payment gateway to process fines payment
+
+to use this gateway:
+
+Clone the repository: git@github.com:HAJS78/Payment-Gateway.git 
+
+Follow any installation instructions for the gateway using its README.md file
+
+In Backend/BiblioTrack_PatronPortal/BiblioTrack_PatronPortal
+/appsettings.json update 
+
+"PaymentGateway": {
+    
+    "BaseUrl": "http://localhost:5150/"
+  }
+
+Build PaymentGateway
+
+Build BiblioTrack_PatronPortal
 
 3. Frontend Setup (Flutter)
 
-Select open folder in Visual Studio Code and navigate to spend_wise
+Select open folder in Visual Studio Code and navigate to biblio_track_patron_portal
 
-Update the REST API endpoint URL inside your lib/Data/Services/Services_implementations
+Update the REST API endpoint URL inside your lib/Data/Network/dio_client.dart
 
-final String baseUrl = "http://10.0.2.2:YourBackendPort/api/ExpenseService/GetPaymentDetailsForExpenseActivity/";
+static const String _baseUrl = 'http://10.0.2.2:5224/api'
 
 Select an Emulator 
 
-Start Debugging (before that you must make sure that the backend .NET app is running.It acts as 
-                  the server)
+Start Debugging (before that you must make sure that the backend .NET app is running,
+both PaymentGateway and BiblioTrack_PatronPortal.It acts as the server)
 
 ## 🖼️ Screenshots
 
@@ -109,19 +129,30 @@ Screenshots are located in the **`ScreenShots`** folder.
 #### Reset Password
 ![Reset Password](ScreenShots/ResetPassword.png)
 
-### Expenses & Debt Management
+### Patron Portal Services
 
 #### User Dashboard
 ![User Dashboard](ScreenShots/Dashboard.png)
 
-#### Add Expense Activity
-![Add Expense Activity](ScreenShots/AddingExpenseActivity.png)
+#### User Dashboard Items
+![User Dashboard](ScreenShots/DashboardItems.png)
 
-#### Expense Activity Details
-![Expense Activity Details](ScreenShots/ExpenseActivityDetails.png)
+#### Catalog Search
+![Catalog Search](ScreenShots/CatalogSearch.png)
 
-#### Settle Debts
-![Settle Debts](ScreenShots/SettleDebt.png)
+#### Favorites Management
+![Favorites Management](ScreenShots/FavoritesManagement.png)
+
+#### Fines Management
+![Fines Management](ScreenShots/FinesManagement.png)
+
+#### Notifications Management
+![Notifications Management](ScreenShots/NotificationsManagement.png)
+
+#### Payment Management
+![Payment Management](ScreenShots/PaymentManagement.png)
+
+
 
 
 ## 🛠 Tech Stack 
@@ -137,5 +168,5 @@ This project is licensed under the MIT License —See LICENSE.md
 
 ## 📅 Timeline
 
-- Started:   February 2026 (15/2/2026)  
-- Completed: May 2026      (19/5/2026) 
+- Started:   July 2026 (16/7/2026)  
+- Completed: October 2026  (2/10/2026) 
