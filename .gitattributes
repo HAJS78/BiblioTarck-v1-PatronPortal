@@ -4,3 +4,14 @@
 # Ignore native platform runners from GitHub language statistics
 biblio_track_patron_portal/android/* linguist-vendored
 biblio_track_patron_portal/ios/* linguist-vendored
+
+# Ignore Makefiles and build scripts
+Makefile linguist-vendored
+*.make linguist-vendored
+*.mk linguist-vendored
+
+# Ignore common build/config files
+*.gradle linguist-vendored
+*.sh linguist-vendored
+*.bat linguist-vendored
+*.ps1 linguist-vendored
